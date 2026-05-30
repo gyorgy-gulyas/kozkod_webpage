@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KözKód — Csatlakozz</title>
+  <meta name="description" content="Jelezd érdeklődésedet a KözKód iránt. Fejlesztők, tesztelők, biztonsági kutatók, UX-tervezők és dokumentálók csatlakozhatnak.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Source Sans 3', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Lexend', sans-serif; }
+  </style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2 text-blue-900 text-lg font-semibold hover:text-blue-700 transition-colors" style="font-family: Lexend, sans-serif;">
+          <svg class="w-7 h-7 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/>
+          </svg>
+          KözKód
+        </a>
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+          <a href="index.html" class="hover:text-blue-800 transition-colors">Főoldal</a>
+          <a href="koncepcio.html" class="hover:text-blue-800 transition-colors">Koncepció</a>
+          <a href="hogyan-mukodik.html" class="hover:text-blue-800 transition-colors">Hogyan működik?</a>
+          <a href="csatlakozz.html" class="text-blue-800 font-semibold">Csatlakozz</a>
+          <a href="kapcsolat.html" class="hover:text-blue-800 transition-colors">Kapcsolat</a>
+          <a href="csatlakozz.html" class="ml-2 bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-900 transition-colors">Jelentkezem</a>
+        </div>
+        <button id="menu-btn" class="md:hidden p-2 text-slate-600 hover:text-blue-800 transition-colors" aria-label="Menü megnyitása">
+          <svg id="menu-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1 text-sm font-medium text-slate-700">
+        <a href="index.html" class="py-2.5 hover:text-blue-800 transition-colors">Főoldal</a>
+        <a href="koncepcio.html" class="py-2.5 hover:text-blue-800 transition-colors">Koncepció</a>
+        <a href="hogyan-mukodik.html" class="py-2.5 hover:text-blue-800 transition-colors">Hogyan működik?</a>
+        <a href="csatlakozz.html" class="py-2.5 text-blue-800 font-semibold">Csatlakozz</a>
+        <a href="kapcsolat.html" class="py-2.5 hover:text-blue-800 transition-colors">Kapcsolat</a>
+        <a href="csatlakozz.html" class="mt-2 bg-blue-800 text-white px-4 py-2.5 rounded-md text-center hover:bg-blue-900 transition-colors">Jelentkezem</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="relative text-white py-14 lg:py-20" style="background-image: radial-gradient(rgba(147,197,253,0.07) 1px, transparent 1px), linear-gradient(to bottom right, rgba(15,30,80,0.62), rgba(30,64,175,0.52)), url('img/hero-csatlakozz.jpg'); background-size: 22px 22px, 100% 100%, cover; background-position: 0 0, 0 0, center 70%;">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <h1 class="text-4xl lg:text-5xl font-semibold mb-4">Csatlakozz a KözKódhoz</h1>
+        <p class="text-blue-200 text-xl leading-relaxed">A KözKód épül — az első fázis folyamatban van. Jelezd érdeklődésed, és értesítünk, amint a pilot kör megnyílik.</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Who can join -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold text-slate-900 mb-4">Ki csatlakozhat?</h2>
+        <p class="text-slate-600 text-lg max-w-2xl mx-auto">Mindenki, akinek van Ügyfélkapuja és szakmai tudása. A platform az alábbi szerepkörökre vár hozzájárulókat.</p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-sm transition-all cursor-default">
+          <div class="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-slate-900 mb-1.5">Fejlesztő</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Frontend, backend, full-stack, mobil — bármilyen területen. Kód írása, review, refaktorálás.</p>
+        </div>
+        <div class="border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-sm transition-all cursor-default">
+          <div class="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-slate-900 mb-1.5">Tesztelő / QA</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Funkcionális tesztelés, hibajelentés, tesztesetek írása, regressionális tesztelés.</p>
+        </div>
+        <div class="border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-sm transition-all cursor-default">
+          <div class="w-10 h-10 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-red-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-slate-900 mb-1.5">Biztonsági szakember</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Sebezhetőség-keresés, biztonsági audit, biztonsági kód-review, bug bounty program keretében.</p>
+        </div>
+        <div class="border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-sm transition-all cursor-default">
+          <div class="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-purple-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-slate-900 mb-1.5">UX / UI tervező</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Felhasználói élmény javítása, akadálymentesség, tervezési rendszer fejlesztése.</p>
+        </div>
+        <div class="border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-sm transition-all cursor-default">
+          <div class="w-10 h-10 bg-amber-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-slate-900 mb-1.5">Technikai dokumentáló</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">API dokumentáció, fejlesztői útmutatók, README fájlok, wiki oldalak írása és karbantartása.</p>
+        </div>
+        <div class="border border-slate-200 rounded-xl p-5 hover:border-blue-300 hover:shadow-sm transition-all cursor-default">
+          <div class="w-10 h-10 bg-slate-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-slate-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-slate-900 mb-1.5">Fordító / lokalizáló</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Felületek és dokumentáció fordítása, lokalizálása különböző nyelvekre és dialektusokra.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What to expect -->
+  <section class="py-16 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-2xl font-semibold text-slate-900 mb-3">Mit kapsz cserébe?</h2>
+        <p class="text-slate-600 max-w-xl mx-auto">A részvétel önkéntes, de nem elismerés nélküli.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+        <div class="text-center">
+          <div class="w-14 h-14 bg-blue-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-slate-900 mb-2">Állami tanúsítvány</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Digitálisan aláírt, hivatkozható tanúsítvány. LinkedIn-en, önéletrajzban, közbeszerzési pályázatokon.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-green-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-slate-900 mb-2">Pont- és szintrendszer</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Bronz → Ezüst → Arany → Platina → KözKód Nagykövet. Nyilvános profilon megjelenítve.</p>
+        </div>
+        <div class="text-center">
+          <div class="w-14 h-14 bg-amber-100 rounded-2xl flex items-center justify-center mx-auto mb-4">
+            <svg class="w-7 h-7 text-amber-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+            </svg>
+          </div>
+          <h3 class="font-semibold text-slate-900 mb-2">KözKód Gála + bug bounty</h3>
+          <p class="text-slate-600 text-sm leading-relaxed">Éves kiemelkedő hozzájárulók díjazása. Bug bounty program biztonsági hibák felfedezésére.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interest Form -->
+  <section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl font-semibold text-slate-900 mb-3">Jelezd érdeklődésed</h2>
+        <p class="text-slate-600 text-lg leading-relaxed">A jogi és műszaki alap most épül. Az érdeklődőkkel felvesszük a kapcsolatot, amint a pilot kör megnyílik.</p>
+      </div>
+
+      <div class="bg-blue-50 border border-blue-200 rounded-xl px-5 py-4 mb-8 flex gap-3">
+        <svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <p class="text-blue-800 text-sm leading-relaxed">Az adatok kizárólag tájékoztatási célból kerülnek felhasználásra. Ügyfélkapu-azonosítás a platform élesítésekor lesz szükséges.</p>
+      </div>
+
+      <form id="interest-form" action="send.php" method="POST" class="space-y-5">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label for="nev" class="block text-sm font-semibold text-slate-700 mb-1.5">Név <span class="text-red-500" aria-hidden="true">*</span></label>
+            <input type="text" id="nev" name="nev" required autocomplete="name"
+              class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              placeholder="Teljes neve">
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-semibold text-slate-700 mb-1.5">E-mail <span class="text-red-500" aria-hidden="true">*</span></label>
+            <input type="email" id="email" name="email" required autocomplete="email"
+              class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors"
+              placeholder="pelda@email.hu">
+          </div>
+        </div>
+        <div>
+          <label for="szerepkor" class="block text-sm font-semibold text-slate-700 mb-1.5">Szerepkör <span class="text-red-500" aria-hidden="true">*</span></label>
+          <select id="szerepkor" name="szerepkor" required
+            class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors bg-white">
+            <option value="" disabled selected>Válassz szerepkört...</option>
+            <option value="fejleszto">Fejlesztő</option>
+            <option value="tesztelo">Tesztelő / QA</option>
+            <option value="biztonsagi">Biztonsági szakember</option>
+            <option value="ux">UX / UI tervező</option>
+            <option value="dokumentalo">Technikai dokumentáló</option>
+            <option value="fordito">Fordító / lokalizáló</option>
+            <option value="egyeb">Egyéb</option>
+          </select>
+        </div>
+        <div>
+          <label for="uzenet" class="block text-sm font-semibold text-slate-700 mb-1.5">Rövid bemutatkozás (opcionális)</label>
+          <textarea id="uzenet" name="uzenet" rows="4"
+            class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors resize-none"
+            placeholder="Mi motivál a KözKódhoz való csatlakozásra? Milyen területen dolgozol?"></textarea>
+        </div>
+        <div class="flex items-start gap-3">
+          <input type="checkbox" id="adatvedelem" name="adatvedelem" required
+            class="mt-1 w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500 cursor-pointer flex-shrink-0">
+          <label for="adatvedelem" class="text-sm text-slate-600 cursor-pointer">
+            Hozzájárulok ahhoz, hogy az adataimat a KözKód kezdeményezéssel kapcsolatos értesítésekre használják. Az adatokat harmadik félnek nem adjuk át.
+          </label>
+        </div>
+        <button type="submit"
+          class="w-full bg-blue-800 text-white font-semibold px-6 py-3.5 rounded-lg hover:bg-blue-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors cursor-pointer text-base">
+          Jelzem az érdeklődésem
+        </button>
+      </form>
+
+      <!-- Success message -->
+      <div id="form-success" class="hidden mt-6 bg-green-50 border border-green-200 rounded-xl p-6 text-center">
+        <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+          <svg class="w-6 h-6 text-green-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-green-900 text-lg mb-2">Köszönjük!</h3>
+        <p class="text-green-700 text-sm">Megkaptuk az érdeklődésedet. Értesítünk, amint a pilot fázis elindul.</p>
+      </div>
+
+      <!-- Error message -->
+      <div id="form-error" class="hidden mt-6 bg-red-50 border border-red-200 rounded-xl p-6 text-center">
+        <div class="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-3">
+          <svg class="w-6 h-6 text-red-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+          </svg>
+        </div>
+        <h3 class="font-semibold text-red-900 text-lg mb-2">Küldési hiba</h3>
+        <p class="text-red-700 text-sm">Az üzenet küldése nem sikerült. Írj közvetlenül az <a href="mailto:info@kozkod.hu" class="underline">info@kozkod.hu</a> címre.</p>
+      </div>
+
+      <p class="text-center text-sm text-slate-400 mt-6">
+        Inkább e-mailben? Írj a <a href="mailto:kozkod@ggyt.hu" class="text-blue-600 hover:text-blue-800 transition-colors">kozkod@ggyt.hu</a> címre.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <div class="flex items-center gap-2 text-white font-semibold mb-3" style="font-family: Lexend, sans-serif;">
+            <svg class="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/>
+            </svg>
+            KözKód
+          </div>
+          <p class="text-sm leading-relaxed">Állami nyílt forráskód platform — közjó ötlet Magyarország digitális jövőjéért.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3 text-sm uppercase tracking-wider" style="font-family: Lexend, sans-serif;">Oldalak</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="hover:text-white transition-colors">Főoldal</a></li>
+            <li><a href="koncepcio.html" class="hover:text-white transition-colors">Koncepció</a></li>
+            <li><a href="hogyan-mukodik.html" class="hover:text-white transition-colors">Hogyan működik?</a></li>
+            <li><a href="csatlakozz.html" class="hover:text-white transition-colors">Csatlakozz</a></li>
+            <li><a href="kapcsolat.html" class="hover:text-white transition-colors">Kapcsolat</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3 text-sm uppercase tracking-wider" style="font-family: Lexend, sans-serif;">Szerző</h4>
+          <p class="text-sm mb-1">Gulyás György Tamás</p>
+          <a href="https://ggyt.hu" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition-colors text-sm">ggyt.hu</a>
+          <p class="text-sm mt-3 text-slate-500">Licenc: EUPL 1.2</p>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm">
+        <p>© 2026 Gulyás György Tamás — KözKód</p>
+        <p class="text-slate-500">A KözKód most épül — csatlakozz te is.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    btn.addEventListener('click', () => {
+      const open = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden', !open);
+      closeIcon.classList.toggle('hidden', open);
+    });
+
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('sent') === '1') {
+      document.getElementById('interest-form').classList.add('hidden');
+      document.getElementById('form-success').classList.remove('hidden');
+      window.history.replaceState({}, '', 'csatlakozz.html');
+    }
+    if (params.get('error') === '1') {
+      document.getElementById('form-error').classList.remove('hidden');
+      window.history.replaceState({}, '', 'csatlakozz.html');
+    }
+  </script>
+</body>
+</html>

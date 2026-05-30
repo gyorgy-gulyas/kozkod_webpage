@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KözKód — Koncepció</title>
+  <meta name="description" content="A KözKód teljes koncepciója: azonosítás, biztonsági osztályok, hozzájárulás, elismerési rendszer, technikai alap, kockázatok és ütemterv.">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Source Sans 3', sans-serif; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Lexend', sans-serif; }
+    .prose-article h2 { font-size: 1.5rem; font-weight: 600; color: #0f172a; margin-top: 2.5rem; margin-bottom: 1rem; line-height: 1.35; }
+    .prose-article h3 { font-size: 1.2rem; font-weight: 600; color: #1e293b; margin-top: 1.75rem; margin-bottom: 0.75rem; }
+    .prose-article p { font-size: 1.0625rem; line-height: 1.75; color: #334155; margin-bottom: 1.25rem; }
+    .prose-article ul { margin-bottom: 1.25rem; padding-left: 1.5rem; }
+    .prose-article ul li { font-size: 1.0625rem; line-height: 1.75; color: #334155; margin-bottom: 0.4rem; list-style-type: disc; }
+    .prose-article blockquote { border-left: 4px solid #1e40af; padding-left: 1.25rem; margin: 1.75rem 0; font-style: italic; color: #475569; }
+    .prose-article blockquote p { color: #475569; }
+    .prose-article strong { color: #1e293b; font-weight: 600; }
+    @media (prefers-reduced-motion: no-preference) {
+      .toc-link { transition: color 0.15s; }
+    }
+  </style>
+</head>
+<body class="bg-white text-slate-800 antialiased">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <a href="index.html" class="flex items-center gap-2 text-blue-900 text-lg font-semibold hover:text-blue-700 transition-colors" style="font-family: Lexend, sans-serif;">
+          <svg class="w-7 h-7 text-blue-700" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/>
+          </svg>
+          KözKód
+        </a>
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-600">
+          <a href="index.html" class="hover:text-blue-800 transition-colors">Főoldal</a>
+          <a href="koncepcio.html" class="text-blue-800 font-semibold">Koncepció</a>
+          <a href="hogyan-mukodik.html" class="hover:text-blue-800 transition-colors">Hogyan működik?</a>
+          <a href="csatlakozz.html" class="hover:text-blue-800 transition-colors">Csatlakozz</a>
+          <a href="kapcsolat.html" class="hover:text-blue-800 transition-colors">Kapcsolat</a>
+          <a href="csatlakozz.html" class="ml-2 bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-900 transition-colors">Jelentkezem</a>
+        </div>
+        <button id="menu-btn" class="md:hidden p-2 text-slate-600 hover:text-blue-800 transition-colors" aria-label="Menü megnyitása">
+          <svg id="menu-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+          <svg id="close-icon" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden border-t border-slate-200 bg-white">
+      <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col gap-1 text-sm font-medium text-slate-700">
+        <a href="index.html" class="py-2.5 hover:text-blue-800 transition-colors">Főoldal</a>
+        <a href="koncepcio.html" class="py-2.5 text-blue-800 font-semibold">Koncepció</a>
+        <a href="hogyan-mukodik.html" class="py-2.5 hover:text-blue-800 transition-colors">Hogyan működik?</a>
+        <a href="csatlakozz.html" class="py-2.5 hover:text-blue-800 transition-colors">Csatlakozz</a>
+        <a href="kapcsolat.html" class="py-2.5 hover:text-blue-800 transition-colors">Kapcsolat</a>
+        <a href="csatlakozz.html" class="mt-2 bg-blue-800 text-white px-4 py-2.5 rounded-md text-center hover:bg-blue-900 transition-colors">Jelentkezem</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <header class="relative text-white py-14 lg:py-20" style="background-image: radial-gradient(rgba(147,197,253,0.07) 1px, transparent 1px), linear-gradient(to bottom right, rgba(15,30,80,0.62), rgba(30,64,175,0.52)), url('img/hero-koncepcio.jpg'); background-size: 22px 22px, 100% 100%, cover; background-position: 0 0, 0 0, center center;">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-2 mb-4">
+          <span class="bg-blue-800 text-blue-200 text-xs font-medium px-2.5 py-1 rounded-full">Közjó</span>
+          <span class="text-blue-400 text-sm">2026. május 23.</span>
+          <span class="text-blue-500 text-sm">~25 perc olvasás</span>
+        </div>
+        <h1 class="text-4xl lg:text-5xl font-semibold mb-4">KözKód</h1>
+        <p class="text-blue-200 text-xl leading-relaxed">Állami nyílt forráskód platform — azonosított fejlesztők, szigorú biztonsági keretek, valódi elismerés.</p>
+        <p class="text-blue-400 text-sm mt-4">Gulyás György Tamás</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content: TOC + Article -->
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+    <div class="lg:grid lg:grid-cols-[240px_1fr] lg:gap-12">
+
+      <!-- Sticky TOC (desktop) -->
+      <aside class="hidden lg:block">
+        <div class="sticky top-24">
+          <p class="text-xs font-semibold text-slate-400 uppercase tracking-wider mb-3">Tartalomjegyzék</p>
+          <nav aria-label="Tartalomjegyzék">
+            <ul class="space-y-1 text-sm text-slate-600">
+              <li><a href="#bevezeto" class="toc-link block py-1 hover:text-blue-700">Bevezető</a></li>
+              <li><a href="#nem-a-github" class="toc-link block py-1 hover:text-blue-700">Kétirányú platform</a></li>
+              <li><a href="#mit-lehet-megnyitni" class="toc-link block py-1 hover:text-blue-700">Mit lehet megnyitni</a></li>
+              <li><a href="#a-szereplok" class="toc-link block py-1 hover:text-blue-700">A szereplők</a></li>
+              <li><a href="#hozzajarulas" class="toc-link block py-1 hover:text-blue-700">A hozzájárulás menete</a></li>
+              <li><a href="#elismeres" class="toc-link block py-1 hover:text-blue-700">Az elismerési rendszer</a></li>
+              <li><a href="#technikai-alap" class="toc-link block py-1 hover:text-blue-700">A technikai alap</a></li>
+              <li><a href="#kockazatok" class="toc-link block py-1 hover:text-blue-700">A kockázatok</a></li>
+              <li><a href="#utemterv" class="toc-link block py-1 hover:text-blue-700">Az ütemterv</a></li>
+              <li><a href="#zarszó" class="toc-link block py-1 hover:text-blue-700">Zárszó</a></li>
+            </ul>
+          </nav>
+          <div class="mt-8 pt-6 border-t border-slate-200">
+            <a href="csatlakozz.html" class="block w-full bg-blue-800 text-white text-sm font-semibold px-4 py-2.5 rounded-md text-center hover:bg-blue-900 transition-colors">Érdekel — csatlakozom</a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Article body -->
+      <article class="prose-article max-w-none">
+
+        <!-- Bevezető -->
+        <section id="bevezeto">
+          <h2>Bevezető</h2>
+          <p>Az állami szoftver-fejlesztés jelenlegi modelljei — akár a szállító, akár az állam tulajdonolja a forráskódot — jellemzően valamilyen fejlesztői kapacitásfüggőséget hoznak létre. Ez nem egyedi magyar jelenség és nem feltétlenül rossz szándék eredménye; a piac egyszerűen eddig nem kínált más megközelítést.</p>
+          <p>Az egyik modellben a fejlesztés külső szállítótól érkezik, zárt forráskóddal, fix licencfeltételekkel. A karbantartás és a hibajavítás szintén a szállítóhoz kötött — az árazás nehezen ellenőrizhető, a kódba nem lehet belátni. Ha a szállító árat emel, kilép a piacról, vagy megszűnik, az intézménynek kevés mozgástere marad. Ez az ismert vendor lock-in.</p>
+          <p>A másik modellben az állam tulajdonolja a forráskódot — de a fejlesztői kapacitás akkor is korlátozott és drága. Ha az eredeti fejlesztő marad, a kapacitásfüggőség fennáll, más formában. Ha váltanak, betanulási idő, elveszett intézményi tudás és kontextus-veszteség keletkezik. Mindkét esetben az állami szervezet viseli a költséget.</p>
+          <p>Közben Magyarországon több tízezer képzett fejlesztő, tesztelő, UX-tervező, kiberbiztonsági szakember dolgozik, akiknek a tudása eddig kihasználatlan maradt az állami digitális infrastruktúra fejlesztésében. Holott a kód egy részénél erre biztonsági feltétel is teljesíthető: ügyfélszolgálati portálok frontendkódja, belső adminisztratív eszközök, dokumentációs felületek — ezeknél a szakmai közösség bevonása a biztonságot erősíti. A „many eyes" elv alapján ezek éppen megbízhatóbbak lennének, ha a szakmai közösség auditálhatja őket.</p>
+          <p>Ez az a pont, ahol a KözKód alternatívát kínál — és ahol a megvalósítás elkezdődött.</p>
+        </section>
+
+        <hr class="border-slate-200 my-8">
+
+        <!-- Nem a GitHub -->
+        <section id="nem-a-github">
+          <h2>Kétirányú platform — azonosított közösséggel</h2>
+          <p>A KözKód két egymást kiegészítő irányban működik, és mindkettőhöz ugyanaz az azonosított közösség járul hozzá.</p>
+
+          <div class="not-prose grid md:grid-cols-2 gap-4 my-6">
+            <div class="bg-blue-50 border border-blue-200 rounded-xl p-5">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="w-7 h-7 bg-blue-700 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0" style="font-family: Lexend, sans-serif;">1</div>
+                <h3 class="font-semibold text-blue-900 text-sm" style="font-family: Lexend, sans-serif;">Intézményi irány</h3>
+              </div>
+              <p class="text-blue-800 text-sm leading-relaxed">Egy állami szerv megnyit egy meglévő rendszer egy részét — a közösség fejleszti, auditálja, javítja. Az intézmény kapacitást és tudást nyer, a közösség hozzájárulása az éles rendszerben realizálódik.</p>
+            </div>
+            <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="w-7 h-7 bg-green-700 text-white rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0" style="font-family: Lexend, sans-serif;">2</div>
+                <h3 class="font-semibold text-green-900 text-sm" style="font-family: Lexend, sans-serif;">Közösségi irány</h3>
+              </div>
+              <p class="text-green-800 text-sm leading-relaxed">A közösség épít fel egy új eszközt a semmiből — iktató rendszert, dokumentumsablon-kezelőt, szabadságnyilvántartót, belső feladatkezelőt. Bármely intézmény szabadon átveheti, telepítheti és használhatja: forráskóddal, szállítói függőség nélkül.</p>
+            </div>
+          </div>
+
+          <p>A közösségi irány különösen ott hatékony, ahol ma kereskedelmi dobozos szoftvereket használnak az intézmények — olyan általános adminisztratív eszközöket, amelyek biztonsági besorolása alap szintű, és amelyeket a szakmai közösség meg tud építeni. Ezek az eszközök a platformon fejlesztve, nyílt licenc alatt állnak elő, és bármely állami szerv telepítheti őket a saját infrastruktúrájára — a KözKód kizárólag a telepítő csomagot biztosítja, az üzemeltetés minden esetben az intézmény saját szerverein történik.</p>
+
+          <p>Mindkét irányhoz ugyanaz az azonosítási alap tartozik. A platform alapja az <strong>Ügyfélkapu+/DÁP azonosítás</strong> — minden hozzájáruló valódi névvel, valódi felelősséggel vesz részt. Minden commit visszavezethető az azt beküldő, Ügyfélkapun belépett személyhez. Az azonosítást a már meglévő állami infrastruktúra, a <strong>KAÜ (Központi Azonosítási Ügynök)</strong> végzi, a felhasználó meglévő hozzáférési adataival.</p>
+          <p>Az első belépéskor a hozzájáruló aláírja a <strong>Hozzájárulói Megállapodást (CLA)</strong>, amely tisztázza a szerzői jogi és felelősségi kérdéseket, majd kiválasztja a profilját: fejlesztő, tesztelő, dokumentáló, fordító, biztonsági szakember — vagy ezek kombinációja.</p>
+        </section>
+
+        <hr class="border-slate-200 my-8">
+
+        <!-- Mit lehet megnyitni -->
+        <section id="mit-lehet-megnyitni">
+          <h2>Mit lehet megnyitni — és mit nem</h2>
+          <p>A <strong>2024. évi LXIX. törvény</strong>, a Kiberbiztonsági törvény, három biztonsági osztályt különböztet meg: alap, jelentős és magas. A KözKód kizárólag az <strong>alap osztályba</strong> sorolt rendszereket és — rendkívül szigorú feltételek mellett — a <strong>jelentős osztályba</strong> sorolt rendszerek meghatározott, nem érzékeny moduljait engedi megnyitni. A <strong>magas osztály soha, semmilyen körülmények között.</strong></p>
+
+          <div class="grid md:grid-cols-3 gap-4 not-prose my-6">
+            <div class="bg-green-50 border border-green-200 rounded-xl p-5">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="w-7 h-7 bg-green-600 text-white rounded-full flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <h3 class="font-semibold text-green-900 text-sm" style="font-family: Lexend, sans-serif;">Alap osztály</h3>
+              </div>
+              <p class="text-green-800 text-sm leading-relaxed">Teljes egészében megnyitható: belső adminisztratív eszközök, dokumentációs portálok, tájékoztató felületek, e-learning rendszerek.</p>
+            </div>
+            <div class="bg-amber-50 border border-amber-200 rounded-xl p-5">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="w-7 h-7 bg-amber-500 text-white rounded-full flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                </div>
+                <h3 class="font-semibold text-amber-900 text-sm" style="font-family: Lexend, sans-serif;">Jelentős osztály</h3>
+              </div>
+              <p class="text-amber-800 text-sm leading-relaxed">Csak nem érzékeny modulok: UI-komponensek, frontend, dokumentáció. IBF + minisztérium együtt minősít. Szigorú feltételekkel.</p>
+            </div>
+            <div class="bg-red-50 border border-red-200 rounded-xl p-5">
+              <div class="flex items-center gap-2 mb-3">
+                <div class="w-7 h-7 bg-red-600 text-white rounded-full flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+                </div>
+                <h3 class="font-semibold text-red-900 text-sm" style="font-family: Lexend, sans-serif;">Magas osztály</h3>
+              </div>
+              <p class="text-red-800 text-sm leading-relaxed">Soha, semmilyen körülmények között. Kritikus infrastruktúra, NIS2 hatályú rendszerek, adónyilvántartás, egészségügyi adatok.</p>
+            </div>
+          </div>
+
+          <p>Az alap osztályba kerülhet: belső adminisztratív eszközök, dokumentációs portálok, nyilvános tájékoztató felületek, e-learning rendszerek. Ezeket teljes egészükben meg lehet nyitni — feltéve, hogy nem tartalmaznak titkosítási kulcsokat, jelszavakat, hozzáférési tokeneket, IP-címeket, üzemeltetési konfigurációkat vagy személyes adatot mintaként.</p>
+          <p>A megnyitásnak minden esetben előzménye van: az intézmény <strong>információbiztonsági felelőse (IBF)</strong> és a <strong>Nemzeti Kiberbiztonsági Intézet (NKI)</strong> együtt vizsgálja meg, mi nyitható meg. Formális határozat, meghatározott hatókörrel, kizárt komponensek listájával és felülvizsgálati ciklussal.</p>
+          <p>A megnyitott komponensek szerzői jogi szempontból engedélyezett licencek alatt jelenhetnek meg: <strong>EUPL 1.2</strong> (ajánlott — az EU saját közigazgatási nyílt licence), MIT vagy Apache 2.0.</p>
+        </section>
+
+        <hr class="border-slate-200 my-8">
+
+        <!-- A szereplők -->
+        <section id="a-szereplok">
+          <h2>A szereplők</h2>
+          <p>A platformot a digitalizációért felelős minisztérium (vagy az általa kijelölt szerv — IdomSoft, NISZ, DÁP Ügynökség) üzemelteti: ők tartják fenn a kódtárhelyet, a CI/CD rendszert és az azonosítási integrációt.</p>
+          <p>Az IdomSoft e téren nem indul nulláról: az <strong>Állami Alkalmazás-fejlesztési Keretrendszer (ÁAFK)</strong> már ma is ezt a logikát valósítja meg szervezetek számára — egységes fejlesztési infrastruktúrát, közös komponenskönyvtárat és kontrollált kiadási folyamatot kínál az állami szoftverprojektekhez. A KözKód ebből a szempontból az ÁAFK természetes kiterjesztése: ugyanazt a megközelítést nyitja meg az ellenőrzött körülmények között dolgozó civil fejlesztők felé is.</p>
+          <p>A <strong>forrás-megnyitó intézmények</strong> — minisztériumok, önkormányzatok, állami tulajdonú társaságok — döntik el, mit tesznek fel a platformra. A megnyitás az ő döntésük, de csak a minisztérium jóváhagyásával és az NKI kötelező, 15 napos határidejű véleménye alapján hozhatják meg.</p>
+          <p>A <strong>karbantartók</strong> az adott intézmény által kijelölt személyek — lehetnek belső munkatársak, de szerződéses szállítók képviselői is. Ők fogadják be a pull requesteket. A <strong>4-szem elv kötelező</strong>: legalább két karbantartó jóváhagyása szükséges minden egyes változtatáshoz.</p>
+          <p>A <strong>hozzájárulók</strong> az Ügyfélkapun belépett, azonosított fejlesztők, tesztelők, technikai írók, UX-tervezők, biztonsági kutatók — mindenki, akinek van szakmai kompetenciája és ideje egy-egy feladatot felvállalni.</p>
+        </section>
+
+        <hr class="border-slate-200 my-8">
+
+        <!-- Hozzájárulás -->
+        <section id="hozzajarulas">
+          <h2>A hozzájárulás folyamata</h2>
+          <p>A mechanizmus pontosan az, amit egy vállalati GitHub-ban megszokott a fejlesztő. A hozzájáruló kiválaszt egy nyitott feladatot, vagy maga javasol egyet. A karbantartó hozzárendeli. A hozzájáruló a saját fork-jában dolgozik, majd pull requestet nyit. Automatizált ellenőrzések futnak le:</p>
+          <ul>
+            <li>Szintaktikai ellenőrzés (linting)</li>
+            <li>Egységtesztek</li>
+            <li>Biztonsági szkennelés (SAST)</li>
+            <li>Licenc-ellenőrzés</li>
+          </ul>
+          <p>Ha ezek átmennek, következik a <strong>4-szem emberi review</strong>. Befogadás esetén a kód a fő ágba kerül, és a hozzájárulás a felhasználó profiljához rendelődik.</p>
+          <p>Az intézmény bármikor szüneteltetheti vagy visszavonhatja a megnyitást. Ez nem kiskapu — ez a biztonságos működés egyik garanciája.</p>
+        </section>
+
+        <hr class="border-slate-200 my-8">
+
+        <!-- Elismerési rendszer -->
+        <section id="elismeres">
+          <h2>Miért csinálná bárki — az elismerési rendszer</h2>
+          <p>Pénzt közvetlenül nem fizet senki a hozzájárulóknak. Ez szándékos — a közvetlen fizetés megváltoztatná a dinamikát, a motivációt és a jogi viszonyokat is. De az elismerés nem szimbolikus.</p>
+          <p>Minden befogadott hozzájárulás pontot ér, súlyozva a típusától és nehézségétől. A pontok három dimenzióban gyűlnek:</p>
+          <ul>
+            <li><strong>Fejlesztési pont</strong> — befogadott kód</li>
+            <li><strong>Minőségi pont</strong> — hibajelentések, tesztelés, biztonsági felfedezések</li>
+            <li><strong>Közösségi pont</strong> — dokumentáció, fordítás, mentorálás</li>
+          </ul>
+          <p>A pontok alapján szintek: <strong>Bronz → Ezüst → Arany → Platina → KözKód Nagykövet</strong> — nyilvános profilon megjelenítve.</p>
+          <p>Meghatározott szintek elérése után a hozzájáruló <strong>KözKód tanúsítványt</strong> kap. Amiben szerepel: a hozzájárulás típusa és időszaka, az érintett projektek, az intézmények neve, és egy hitelesítő link. Ezt a tanúsítványt LinkedIn-en, önéletrajzban, közbeszerzési pályázatokban lehet hivatkozni.</p>
+          <p>A rendszer mellé: éves <strong>KözKód Gála</strong> kiemelkedő hozzájárulóknak, lehetőség szakmai panelekbe és tanácsadó testületekbe kerülni, <strong>bug bounty program</strong> biztonsági hibák felfedezésére, és egyes esetekben felkérés szerződéses munkára, összeférhetetlenségi szabályok mellett.</p>
+        </section>
+
+        <hr class="border-slate-200 my-8">
+
+        <!-- Technikai alap -->
+        <section id="technikai-alap">
+          <h2>A technikai alap</h2>
+          <p>A platform önállóan, <strong>magyar szervereken, állami felügyelet alatt</strong> fut. Alapja egy hardenelt, magán-üzemeltetésű <strong>Gitea, Forgejo vagy GitLab Community Edition</strong> — a nyílt forráskódú kódtárhelyek közül az, amelyik az adott pillanatban a legjobb kompromisszumot jelenti felügyelet, karbantarthatóság és funkciókészlet között.</p>
+          <p>A speciális modulok — KAÜ-integráció az Ügyfélkapu+/DÁP belépéshez, CLA-modul, pontrendszer és tanúsítvány-modul — az alap platformra épülnek. Az automatizált pipeline kötelező:</p>
+          <ul>
+            <li>Titkok keresése — gitleaks, trufflehog</li>
+            <li>Függőségaudit — OWASP Dependency-Check</li>
+            <li>SAST — Semgrep, SonarQube</li>
+            <li>Licenc-ellenőrzés — FOSSA, Scancode</li>
+          </ul>
+          <p>Az auditnapló minden hozzáférést, commitot, review-t <strong>WORM tárolóban</strong> rögzít — módosíthatatlan, tartós.</p>
+          <p>És a legfontosabb: <strong>a platform önmaga is nyílt forráskódú projektként működjön</strong>, saját kódja is a platformon hostolva. Így a közösség javíthatja és auditálhatja azt a rendszert, amelyen a közösségi hozzájárulás folyik.</p>
+        </section>
+
+        <hr class="border-slate-200 my-8">
+
+        <!-- Kockázatok -->
+        <section id="kockazatok">
+          <h2>A kockázatok</h2>
+          <p>A legkomolyabb kockázat a <strong>supply chain támadás</strong>: egy hozzájáruló szándékosan sebezhető kódot próbál bevinni. A védekezés rétegelt — kötelező 4-szem elv, automatikus SAST és függőségaudit, NKI random ellenőrzés, hozzájárulói előtörténet figyelése. De nem tévedhetetlen. A modell kizárólag azért működhet, mert a megnyitható rendszerek köre szigorúan korlátozott.</p>
+          <p>A <strong>karbantartói kapacitáshiány</strong> talán a legvalósabb kockázat. Ha az intézmény elegendő karbantartói kapacitás nélkül nyit meg projektet, a közösségi részvétel elhal. Ezért a megnyitás engedélyezésének feltétele a karbantartói kapacitás bemutatása — és jó esetben egy <strong>központi karbantartói pool</strong> kialakítása.</p>
+          <p>A <strong>GDPR-megfelelés</strong> kezelendő: a hozzájárulók azonosítása személyes adat. A megoldás adattakarékos — nyilvánosan csak pszeudonim jelenik meg, a valódi azonosító kizárólag a platformüzemeltetőnél, jogszabályi alapon kezelve. A szellemi tulajdon kérdéseit a kötelező CLA és a DCO (Developer Certificate of Origin) tisztázza.</p>
+          <p>A <strong>politikai instabilitás</strong> reális kockázat — egy modell, amely csak egy kormányzati ciklusig él, nem épít bizalmat. A válasz: törvényi szintű rögzítés, széleskörű parlamenti és szakmai konszenzus, csatlakozás az EU-s közigazgatási nyílt forrás kezdeményezésekhez EUPL-alapon.</p>
+        </section>
+
+        <hr class="border-slate-200 my-8">
+
+        <!-- Ütemterv -->
+        <section id="utemterv">
+          <h2>A megvalósítás fázisai</h2>
+          <p>Három fázis — fokozatosan, ellenőrzötten, visszamérhetően.</p>
+          <p>Az <strong>első fázisban</strong> — amely jelenleg folyamatban van — a jogszabályi háttér kidolgozása zajlik (végrehajtási rendelet vagy önálló kormányrendelet), intézményi szerepkörök kijelölése, műszaki specifikáció, CLA és etikai kódex megírása.</p>
+          <p>A <strong>második fázisban</strong>: pilot, zárt körben. Két-három önként jelentkező intézmény — egy minisztérium, egy nagyváros önkormányzata, egy állami hivatal — nyit meg egy-egy alap osztályú projektet. Korlátozott hozzájárulói kör, meghívás alapján, kb. 100–200 fő. Visszamérés, finomítás.</p>
+          <p>A <strong>harmadik fázisban</strong>: nyitott regisztráció minden Ügyfélkapu+/DÁP felhasználó számára. Tanúsítványrendszer és pontrendszer élesítése. Bug bounty program. Jelentős osztályú komponensek óvatos megnyitása. Csatlakozás az EU-s közigazgatási nyílt forrás kezdeményezésekhez.</p>
+        </section>
+
+        <hr class="border-slate-200 my-8">
+
+        <!-- Zárszó -->
+        <section id="zarszó">
+          <h2>Zárszó</h2>
+          <p>A KözKód nem utópia. Az elemek mind léteznek: az Ügyfélkapu már működik, a Gitea/Forgejo már működik, a supply chain audit eszközök már léteznek, az EUPL már egy validált licenc. A kérdés nem az, hogy lehetséges-e — hanem hogy van-e politikai akarat és intézményi elkötelezettség megcsinálni.</p>
+          <p>Ha igen, Magyarország az elsők között lehet az EU-ban, amely a „kontrollált állami nyílt forráskód" modellt valóban megvalósítja — nem szimbólumként, hanem operatív infrastruktúraként. Ez valami olyasmi, amire a civil szakmai közösség régóta vár, az állam hasznát veszi, és az EU-s szinten is látható lenne.</p>
+          <blockquote>
+            <p>A modell sikere három tényezőn múlik: a kellően óvatos, kockázatorientált jogi keret megalkotásán; az intézményi vezetők elköteleződésén; és a szakmai közösség bizalmán abban, hogy hozzájárulása valódi, nem szimbolikus hatást gyakorol az állam működésére.</p>
+          </blockquote>
+          <p class="text-sm text-slate-400">— Gulyás György Tamás, 2026. május 23. | A megvalósítás azóta elkezdődött.</p>
+        </section>
+
+        <!-- Bottom CTA -->
+        <div class="mt-12 p-8 bg-blue-50 border border-blue-200 rounded-2xl text-center not-prose">
+          <h3 class="text-xl font-semibold text-slate-900 mb-3" style="font-family: Lexend, sans-serif;">Érdekel a KözKód?</h3>
+          <p class="text-slate-600 mb-6">Jelezd érdeklődésed — értesítünk, ha a pilot fázis elindul.</p>
+          <div class="flex flex-wrap gap-4 justify-center">
+            <a href="csatlakozz.html" class="inline-flex items-center gap-2 bg-blue-800 text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-900 transition-colors cursor-pointer">Csatlakozom</a>
+            <a href="hogyan-mukodik.html" class="inline-flex items-center gap-2 border border-blue-300 text-blue-800 font-semibold px-6 py-3 rounded-md hover:bg-blue-100 transition-colors cursor-pointer">Hogyan működik?</a>
+          </div>
+        </div>
+
+      </article>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-slate-900 text-slate-400 py-12 mt-8">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-3 gap-8 mb-8">
+        <div>
+          <div class="flex items-center gap-2 text-white font-semibold mb-3" style="font-family: Lexend, sans-serif;">
+            <svg class="w-6 h-6 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75L22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3l-4.5 16.5"/>
+            </svg>
+            KözKód
+          </div>
+          <p class="text-sm leading-relaxed">Állami nyílt forráskód platform — közjó ötlet Magyarország digitális jövőjéért.</p>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3 text-sm uppercase tracking-wider" style="font-family: Lexend, sans-serif;">Oldalak</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="index.html" class="hover:text-white transition-colors">Főoldal</a></li>
+            <li><a href="koncepcio.html" class="hover:text-white transition-colors">Koncepció</a></li>
+            <li><a href="hogyan-mukodik.html" class="hover:text-white transition-colors">Hogyan működik?</a></li>
+            <li><a href="csatlakozz.html" class="hover:text-white transition-colors">Csatlakozz</a></li>
+            <li><a href="kapcsolat.html" class="hover:text-white transition-colors">Kapcsolat</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-semibold mb-3 text-sm uppercase tracking-wider" style="font-family: Lexend, sans-serif;">Szerző</h4>
+          <p class="text-sm mb-1">Gulyás György Tamás</p>
+          <a href="https://ggyt.hu" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition-colors text-sm">ggyt.hu</a>
+          <p class="text-sm mt-3 text-slate-500">Licenc: EUPL 1.2</p>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-sm">
+        <p>© 2026 Gulyás György Tamás — KözKód</p>
+        <p class="text-slate-500">A KözKód most épül — csatlakozz te is.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+    btn.addEventListener('click', () => {
+      const open = !menu.classList.contains('hidden');
+      menu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden', !open);
+      closeIcon.classList.toggle('hidden', open);
+    });
+  </script>
+</body>
+</html>
