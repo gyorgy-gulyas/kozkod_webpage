@@ -62,7 +62,7 @@
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl">
         <h1 class="text-4xl lg:text-5xl font-semibold mb-4">Csatlakozz a KözKódhoz</h1>
-        <p class="text-blue-200 text-xl leading-relaxed">A KözKód épül — az első fázis folyamatban van. Jelezd érdeklődésed, és értesítünk, amint a pilot kör megnyílik.</p>
+        <p class="text-blue-200 text-xl leading-relaxed">Jelezd érdeklődésed — értesítünk, amint a regisztráció megnyílik.</p>
       </div>
     </div>
   </header>
@@ -177,7 +177,7 @@
     <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-10">
         <h2 class="text-3xl font-semibold text-slate-900 mb-3">Jelezd érdeklődésed</h2>
-        <p class="text-slate-600 text-lg leading-relaxed">A jogi és műszaki alap most épül. Az érdeklődőkkel felvesszük a kapcsolatot, amint a pilot kör megnyílik.</p>
+        <p class="text-slate-600 text-lg leading-relaxed">Az érdeklődőkkel felvesszük a kapcsolatot, amint a regisztráció megnyílik.</p>
       </div>
 
       <div class="bg-blue-50 border border-blue-200 rounded-xl px-5 py-4 mb-8 flex gap-3">
@@ -202,20 +202,39 @@
               placeholder="pelda@email.hu">
           </div>
         </div>
-        <div>
-          <label for="szerepkor" class="block text-sm font-semibold text-slate-700 mb-1.5">Szerepkör <span class="text-red-500" aria-hidden="true">*</span></label>
-          <select id="szerepkor" name="szerepkor" required
-            class="w-full border border-slate-300 rounded-lg px-4 py-2.5 text-slate-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-colors bg-white">
-            <option value="" disabled selected>Válassz szerepkört...</option>
-            <option value="fejleszto">Fejlesztő</option>
-            <option value="tesztelo">Tesztelő / QA</option>
-            <option value="biztonsagi">Biztonsági szakember</option>
-            <option value="ux">UX / UI tervező</option>
-            <option value="dokumentalo">Technikai dokumentáló</option>
-            <option value="fordito">Fordító / lokalizáló</option>
-            <option value="egyeb">Egyéb</option>
-          </select>
-        </div>
+        <fieldset>
+          <legend class="block text-sm font-semibold text-slate-700 mb-2.5">Szerepkör <span class="text-red-500" aria-hidden="true">*</span> <span class="text-slate-400 font-normal">(több is választható)</span></legend>
+          <div class="grid sm:grid-cols-2 gap-2">
+            <label class="flex items-center gap-3 px-3.5 py-2.5 border border-slate-200 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition-colors has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50">
+              <input type="checkbox" name="szerepkor[]" value="fejleszto" class="w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500 cursor-pointer flex-shrink-0">
+              <span class="text-slate-700 text-sm">Fejlesztő</span>
+            </label>
+            <label class="flex items-center gap-3 px-3.5 py-2.5 border border-slate-200 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition-colors has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50">
+              <input type="checkbox" name="szerepkor[]" value="tesztelo" class="w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500 cursor-pointer flex-shrink-0">
+              <span class="text-slate-700 text-sm">Tesztelő / QA</span>
+            </label>
+            <label class="flex items-center gap-3 px-3.5 py-2.5 border border-slate-200 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition-colors has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50">
+              <input type="checkbox" name="szerepkor[]" value="biztonsagi" class="w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500 cursor-pointer flex-shrink-0">
+              <span class="text-slate-700 text-sm">Biztonsági szakember</span>
+            </label>
+            <label class="flex items-center gap-3 px-3.5 py-2.5 border border-slate-200 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition-colors has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50">
+              <input type="checkbox" name="szerepkor[]" value="ux" class="w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500 cursor-pointer flex-shrink-0">
+              <span class="text-slate-700 text-sm">UX / UI tervező</span>
+            </label>
+            <label class="flex items-center gap-3 px-3.5 py-2.5 border border-slate-200 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition-colors has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50">
+              <input type="checkbox" name="szerepkor[]" value="dokumentalo" class="w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500 cursor-pointer flex-shrink-0">
+              <span class="text-slate-700 text-sm">Technikai dokumentáló</span>
+            </label>
+            <label class="flex items-center gap-3 px-3.5 py-2.5 border border-slate-200 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition-colors has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50">
+              <input type="checkbox" name="szerepkor[]" value="fordito" class="w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500 cursor-pointer flex-shrink-0">
+              <span class="text-slate-700 text-sm">Fordító / lokalizáló</span>
+            </label>
+            <label class="flex items-center gap-3 px-3.5 py-2.5 border border-slate-200 rounded-lg cursor-pointer hover:border-blue-400 hover:bg-blue-50 transition-colors has-[:checked]:border-blue-500 has-[:checked]:bg-blue-50">
+              <input type="checkbox" name="szerepkor[]" value="egyeb" class="w-4 h-4 text-blue-600 border-slate-300 rounded focus:ring-blue-500 cursor-pointer flex-shrink-0">
+              <span class="text-slate-700 text-sm">Egyéb</span>
+            </label>
+          </div>
+        </fieldset>
         <div>
           <label for="uzenet" class="block text-sm font-semibold text-slate-700 mb-1.5">Rövid bemutatkozás (opcionális)</label>
           <textarea id="uzenet" name="uzenet" rows="4"
@@ -243,7 +262,7 @@
           </svg>
         </div>
         <h3 class="font-semibold text-green-900 text-lg mb-2">Köszönjük!</h3>
-        <p class="text-green-700 text-sm">Megkaptuk az érdeklődésedet. Értesítünk, amint a pilot fázis elindul.</p>
+        <p class="text-green-700 text-sm">Megkaptuk az érdeklődésedet. Értesítünk, amint a regisztráció megnyílik.</p>
       </div>
 
       <!-- Error message -->

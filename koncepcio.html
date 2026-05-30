@@ -102,7 +102,6 @@
               <li><a href="#elismeres" class="toc-link block py-1 hover:text-blue-700">Az elismerési rendszer</a></li>
               <li><a href="#technikai-alap" class="toc-link block py-1 hover:text-blue-700">A technikai alap</a></li>
               <li><a href="#kockazatok" class="toc-link block py-1 hover:text-blue-700">A kockázatok</a></li>
-              <li><a href="#utemterv" class="toc-link block py-1 hover:text-blue-700">Az ütemterv</a></li>
               <li><a href="#zarszó" class="toc-link block py-1 hover:text-blue-700">Zárszó</a></li>
             </ul>
           </nav>
@@ -202,8 +201,8 @@
         <!-- A szereplők -->
         <section id="a-szereplok">
           <h2>A szereplők</h2>
-          <p>A platformot a digitalizációért felelős minisztérium (vagy az általa kijelölt szerv — IdomSoft, NISZ, DÁP Ügynökség) üzemelteti: ők tartják fenn a kódtárhelyet, a CI/CD rendszert és az azonosítási integrációt.</p>
-          <p>Az IdomSoft e téren nem indul nulláról: az <strong>Állami Alkalmazás-fejlesztési Keretrendszer (ÁAFK)</strong> már ma is ezt a logikát valósítja meg szervezetek számára — egységes fejlesztési infrastruktúrát, közös komponenskönyvtárat és kontrollált kiadási folyamatot kínál az állami szoftverprojektekhez. A KözKód ebből a szempontból az ÁAFK természetes kiterjesztése: ugyanazt a megközelítést nyitja meg az ellenőrzött körülmények között dolgozó civil fejlesztők felé is.</p>
+          <p>A platformot jelenleg a KözKód közösség tartja fenn — a kódtárhelyet, a CI/CD rendszert és az azonosítási integrációt egyaránt. Az üzemeltetés bármikor átadható egy állami szerv részére: a digitalizációért felelős minisztérium, az IdomSoft, a NISZ vagy a DÁP Ügynökség bármikor átveheti, ha az intézményi elköteleződés és a kapacitás adott.</p>
+          <p>Ez a modell kapcsolódik az <strong>Állami Alkalmazás-fejlesztési Keretrendszer (ÁAFK)</strong> logikájához, amely már ma is egységes fejlesztési infrastruktúrát, közös komponenskönyvtárat és kontrollált kiadási folyamatot kínál az állami szoftverprojektekhez. A KözKód ezt a megközelítést terjeszti ki a civil fejlesztői közösség felé — és kínál egy természetes átjárót az állami átvételre, ha arra igény keletkezik.</p>
           <p>A <strong>forrás-megnyitó intézmények</strong> — minisztériumok, önkormányzatok, állami tulajdonú társaságok — döntik el, mit tesznek fel a platformra. A megnyitás az ő döntésük, de csak a minisztérium jóváhagyásával és az NKI kötelező, 15 napos határidejű véleménye alapján hozhatják meg.</p>
           <p>A <strong>karbantartók</strong> az adott intézmény által kijelölt személyek — lehetnek belső munkatársak, de szerződéses szállítók képviselői is. Ők fogadják be a pull requesteket. A <strong>4-szem elv kötelező</strong>: legalább két karbantartó jóváhagyása szükséges minden egyes változtatáshoz.</p>
           <p>A <strong>hozzájárulók</strong> az Ügyfélkapun belépett, azonosított fejlesztők, tesztelők, technikai írók, UX-tervezők, biztonsági kutatók — mindenki, akinek van szakmai kompetenciája és ideje egy-egy feladatot felvállalni.</p>
@@ -222,7 +221,7 @@
             <li>Licenc-ellenőrzés</li>
           </ul>
           <p>Ha ezek átmennek, következik a <strong>4-szem emberi review</strong>. Befogadás esetén a kód a fő ágba kerül, és a hozzájárulás a felhasználó profiljához rendelődik.</p>
-          <p>Az intézmény bármikor szüneteltetheti vagy visszavonhatja a megnyitást. Ez nem kiskapu — ez a biztonságos működés egyik garanciája.</p>
+          <p>Az intézmény bármikor szüneteltetheti vagy visszavonhatja a megnyitást — ez a rugalmasság a biztonságos működés egyik tudatos garanciája.</p>
         </section>
 
         <hr class="border-slate-200 my-8">
@@ -247,7 +246,7 @@
         <!-- Technikai alap -->
         <section id="technikai-alap">
           <h2>A technikai alap</h2>
-          <p>A platform önállóan, <strong>magyar szervereken, állami felügyelet alatt</strong> fut. Alapja egy hardenelt, magán-üzemeltetésű <strong>Gitea, Forgejo vagy GitLab Community Edition</strong> — a nyílt forráskódú kódtárhelyek közül az, amelyik az adott pillanatban a legjobb kompromisszumot jelenti felügyelet, karbantarthatóság és funkciókészlet között.</p>
+          <p>A platform önállóan, <strong>magyar szervereken</strong> fut. Alapja egy hardenelt, magán-üzemeltetésű <strong>GitLab Community Edition</strong> — az állami intézményi átvételhez bármikor készen álló, nyílt forráskódú kódtárhely-megoldás.</p>
           <p>A speciális modulok — KAÜ-integráció az Ügyfélkapu+/DÁP belépéshez, CLA-modul, pontrendszer és tanúsítvány-modul — az alap platformra épülnek. Az automatizált pipeline kötelező:</p>
           <ul>
             <li>Titkok keresése — gitleaks, trufflehog</li>
@@ -256,7 +255,7 @@
             <li>Licenc-ellenőrzés — FOSSA, Scancode</li>
           </ul>
           <p>Az auditnapló minden hozzáférést, commitot, review-t <strong>WORM tárolóban</strong> rögzít — módosíthatatlan, tartós.</p>
-          <p>És a legfontosabb: <strong>a platform önmaga is nyílt forráskódú projektként működjön</strong>, saját kódja is a platformon hostolva. Így a közösség javíthatja és auditálhatja azt a rendszert, amelyen a közösségi hozzájárulás folyik.</p>
+          <p>A platform önmaga is nyílt forráskódú projektként <strong>működik</strong> — saját kódja is a platformon hostolva. A közösség javíthatja és auditálhatja azt a rendszert, amelyen a közösségi hozzájárulás folyik.</p>
         </section>
 
         <hr class="border-slate-200 my-8">
@@ -270,16 +269,6 @@
           <p>A <strong>politikai instabilitás</strong> reális kockázat — egy modell, amely csak egy kormányzati ciklusig él, nem épít bizalmat. A válasz: törvényi szintű rögzítés, széleskörű parlamenti és szakmai konszenzus, csatlakozás az EU-s közigazgatási nyílt forrás kezdeményezésekhez EUPL-alapon.</p>
         </section>
 
-        <hr class="border-slate-200 my-8">
-
-        <!-- Ütemterv -->
-        <section id="utemterv">
-          <h2>A megvalósítás fázisai</h2>
-          <p>Három fázis — fokozatosan, ellenőrzötten, visszamérhetően.</p>
-          <p>Az <strong>első fázisban</strong> — amely jelenleg folyamatban van — a jogszabályi háttér kidolgozása zajlik (végrehajtási rendelet vagy önálló kormányrendelet), intézményi szerepkörök kijelölése, műszaki specifikáció, CLA és etikai kódex megírása.</p>
-          <p>A <strong>második fázisban</strong>: pilot, zárt körben. Két-három önként jelentkező intézmény — egy minisztérium, egy nagyváros önkormányzata, egy állami hivatal — nyit meg egy-egy alap osztályú projektet. Korlátozott hozzájárulói kör, meghívás alapján, kb. 100–200 fő. Visszamérés, finomítás.</p>
-          <p>A <strong>harmadik fázisban</strong>: nyitott regisztráció minden Ügyfélkapu+/DÁP felhasználó számára. Tanúsítványrendszer és pontrendszer élesítése. Bug bounty program. Jelentős osztályú komponensek óvatos megnyitása. Csatlakozás az EU-s közigazgatási nyílt forrás kezdeményezésekhez.</p>
-        </section>
 
         <hr class="border-slate-200 my-8">
 
@@ -297,7 +286,7 @@
         <!-- Bottom CTA -->
         <div class="mt-12 p-8 bg-blue-50 border border-blue-200 rounded-2xl text-center not-prose">
           <h3 class="text-xl font-semibold text-slate-900 mb-3" style="font-family: Lexend, sans-serif;">Érdekel a KözKód?</h3>
-          <p class="text-slate-600 mb-6">Jelezd érdeklődésed — értesítünk, ha a pilot fázis elindul.</p>
+          <p class="text-slate-600 mb-6">Jelezd érdeklődésed — értesítünk, amint a regisztráció megnyílik.</p>
           <div class="flex flex-wrap gap-4 justify-center">
             <a href="csatlakozz.html" class="inline-flex items-center gap-2 bg-blue-800 text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-900 transition-colors cursor-pointer">Csatlakozom</a>
             <a href="hogyan-mukodik.html" class="inline-flex items-center gap-2 border border-blue-300 text-blue-800 font-semibold px-6 py-3 rounded-md hover:bg-blue-100 transition-colors cursor-pointer">Hogyan működik?</a>

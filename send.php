@@ -6,7 +6,11 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $name    = htmlspecialchars(trim($_POST['nev'] ?? ''));
 $email   = filter_var(trim($_POST['email'] ?? ''), FILTER_VALIDATE_EMAIL);
-$role    = htmlspecialchars(trim($_POST['szerepkor'] ?? ''));
+$roles_raw = $_POST['szerepkor'] ?? [];
+$roles   = is_array($roles_raw)
+    ? implode(', ', array_map('htmlspecialchars', $roles_raw))
+    : htmlspecialchars(trim($roles_raw));
+$role    = $roles;
 $message = htmlspecialchars(trim($_POST['uzenet'] ?? ''));
 $consent = isset($_POST['adatvedelem']);
 
