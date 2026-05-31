@@ -44,7 +44,7 @@
           <a href="hogyan-mukodik.html" class="hover:text-blue-800 transition-colors">Hogyan működik?</a>
           <a href="csatlakozz.html" class="hover:text-blue-800 transition-colors">Csatlakozz</a>
           <a href="kapcsolat.html" class="hover:text-blue-800 transition-colors">Kapcsolat</a>
-          <a href="csatlakozz.html" class="ml-2 bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-900 transition-colors">Jelentkezem</a>
+          <a href="https://platform.kozkod.hu/auth/register" class="ml-2 bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-900 transition-colors">Regisztrálok</a>
         </div>
         <button id="menu-btn" class="md:hidden p-2 text-slate-600 hover:text-blue-800 transition-colors" aria-label="Menü megnyitása">
           <svg id="menu-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -63,7 +63,7 @@
         <a href="hogyan-mukodik.html" class="py-2.5 hover:text-blue-800 transition-colors">Hogyan működik?</a>
         <a href="csatlakozz.html" class="py-2.5 hover:text-blue-800 transition-colors">Csatlakozz</a>
         <a href="kapcsolat.html" class="py-2.5 hover:text-blue-800 transition-colors">Kapcsolat</a>
-        <a href="csatlakozz.html" class="mt-2 bg-blue-800 text-white px-4 py-2.5 rounded-md text-center hover:bg-blue-900 transition-colors">Jelentkezem</a>
+        <a href="https://platform.kozkod.hu/auth/register" class="mt-2 bg-blue-800 text-white px-4 py-2.5 rounded-md text-center hover:bg-blue-900 transition-colors">Regisztrálok</a>
       </div>
     </div>
   </nav>
@@ -150,7 +150,7 @@
 
           <p>A közösségi irány különösen ott hatékony, ahol ma kereskedelmi dobozos szoftvereket használnak az intézmények — olyan általános adminisztratív eszközöket, amelyek biztonsági besorolása alap szintű, és amelyeket a szakmai közösség meg tud építeni. Ezek az eszközök a platformon fejlesztve, nyílt licenc alatt állnak elő, és bármely állami szerv telepítheti őket a saját infrastruktúrájára — a KözKód kizárólag a telepítő csomagot biztosítja, az üzemeltetés minden esetben az intézmény saját szerverein történik.</p>
 
-          <p>Mindkét irányhoz ugyanaz az azonosítási alap tartozik. A platform alapja az <strong>Ügyfélkapu+/DÁP azonosítás</strong> — minden hozzájáruló valódi névvel, valódi felelősséggel vesz részt. Minden commit visszavezethető az azt beküldő, Ügyfélkapun belépett személyhez. Az azonosítást a már meglévő állami infrastruktúra, a <strong>KAÜ (Központi Azonosítási Ügynök)</strong> végzi, a felhasználó meglévő hozzáférési adataival.</p>
+          <p>Mindkét irányhoz ugyanaz az azonosítási alap tartozik. Minden hozzájáruló valódi névvel, valódi felelősséggel vesz részt — a belépés felhasználónévvel, jelszóval és kötelező kétlépéses azonosítással (TOTP 2FA) történik a <strong>platform.kozkod.hu</strong> oldalon. Minden commit visszavezethető az azt beküldő személyhez. Tervezett jövőbeli fejlesztés a <strong>KAÜ (Központi Azonosítási Ügynök)</strong> integráció az Ügyfélkapu+/DÁP hozzáféréssel — az infrastruktúra előkészítve.</p>
           <p>Az első belépéskor a hozzájáruló aláírja a <strong>Hozzájárulói Megállapodást (CLA)</strong>, amely tisztázza a szerzői jogi és felelősségi kérdéseket, majd kiválasztja a profilját: fejlesztő, tesztelő, dokumentáló, fordító, biztonsági szakember — vagy ezek kombinációja.</p>
         </section>
 
@@ -247,7 +247,7 @@
         <section id="technikai-alap">
           <h2>A technikai alap</h2>
           <p>A platform önállóan, <strong>magyar szervereken</strong> fut. Alapja egy hardenelt, magán-üzemeltetésű <strong>GitLab Community Edition</strong> — az állami intézményi átvételhez bármikor készen álló, nyílt forráskódú kódtárhely-megoldás.</p>
-          <p>A speciális modulok — KAÜ-integráció az Ügyfélkapu+/DÁP belépéshez, CLA-modul, pontrendszer és tanúsítvány-modul — az alap platformra épülnek. Az automatizált pipeline kötelező:</p>
+          <p>A speciális modulok — CLA-modul, pontrendszer és tanúsítvány-modul — az alap platformra épülnek. A KAÜ-integráció (Ügyfélkapu+/DÁP belépés) tervezett jövőbeli fejlesztés, az infrastruktúra előkészítve. Az automatizált pipeline kötelező:</p>
           <ul>
             <li>Titkok keresése — gitleaks, trufflehog</li>
             <li>Függőségaudit — OWASP Dependency-Check</li>
@@ -286,9 +286,9 @@
         <!-- Bottom CTA -->
         <div class="mt-12 p-8 bg-blue-50 border border-blue-200 rounded-2xl text-center not-prose">
           <h3 class="text-xl font-semibold text-slate-900 mb-3" style="font-family: Lexend, sans-serif;">Érdekel a KözKód?</h3>
-          <p class="text-slate-600 mb-6">Jelezd érdeklődésed — értesítünk, amint a regisztráció megnyílik.</p>
+          <p class="text-slate-600 mb-6">A platform elérhető — regisztrálj és kezdj el hozzájárulni állami nyílt forráskódú projektekhez.</p>
           <div class="flex flex-wrap gap-4 justify-center">
-            <a href="csatlakozz.html" class="inline-flex items-center gap-2 bg-blue-800 text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-900 transition-colors cursor-pointer">Csatlakozom</a>
+            <a href="https://platform.kozkod.hu/auth/register" class="inline-flex items-center gap-2 bg-blue-800 text-white font-semibold px-6 py-3 rounded-md hover:bg-blue-900 transition-colors cursor-pointer">Regisztrálok →</a>
             <a href="hogyan-mukodik.html" class="inline-flex items-center gap-2 border border-blue-300 text-blue-800 font-semibold px-6 py-3 rounded-md hover:bg-blue-100 transition-colors cursor-pointer">Hogyan működik?</a>
           </div>
         </div>
