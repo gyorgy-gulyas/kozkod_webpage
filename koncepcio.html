@@ -44,7 +44,8 @@
           <a href="hogyan-mukodik.html" class="hover:text-blue-800 transition-colors">Hogyan működik?</a>
           <a href="csatlakozz.html" class="hover:text-blue-800 transition-colors">Csatlakozz</a>
           <a href="kapcsolat.html" class="hover:text-blue-800 transition-colors">Kapcsolat</a>
-          <a href="https://platform.kozkod.hu/auth/register" class="ml-2 bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-900 transition-colors">Regisztrálok</a>
+          <a href="https://platform.kozkod.hu/auth/login" class="ml-2 text-blue-800 font-medium px-3 py-2 hover:text-blue-900 transition-colors">Belépés</a>
+          <a href="https://platform.kozkod.hu/auth/register" class="bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-900 transition-colors">Regisztráció</a>
         </div>
         <button id="menu-btn" class="md:hidden p-2 text-slate-600 hover:text-blue-800 transition-colors" aria-label="Menü megnyitása">
           <svg id="menu-icon" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -63,7 +64,8 @@
         <a href="hogyan-mukodik.html" class="py-2.5 hover:text-blue-800 transition-colors">Hogyan működik?</a>
         <a href="csatlakozz.html" class="py-2.5 hover:text-blue-800 transition-colors">Csatlakozz</a>
         <a href="kapcsolat.html" class="py-2.5 hover:text-blue-800 transition-colors">Kapcsolat</a>
-        <a href="https://platform.kozkod.hu/auth/register" class="mt-2 bg-blue-800 text-white px-4 py-2.5 rounded-md text-center hover:bg-blue-900 transition-colors">Regisztrálok</a>
+        <a href="https://platform.kozkod.hu/auth/login" class="mt-2 text-center text-blue-800 font-medium px-4 py-2.5 hover:text-blue-900 transition-colors">Belépés</a>
+        <a href="https://platform.kozkod.hu/auth/register" class="mt-1 bg-blue-800 text-white px-4 py-2.5 rounded-md text-center hover:bg-blue-900 transition-colors">Regisztráció</a>
       </div>
     </div>
   </nav>
@@ -149,6 +151,9 @@
           </div>
 
           <p>A közösségi irány különösen ott hatékony, ahol ma kereskedelmi dobozos szoftvereket használnak az intézmények — olyan általános adminisztratív eszközöket, amelyek biztonsági besorolása alap szintű, és amelyeket a szakmai közösség meg tud építeni. Ezek az eszközök a platformon fejlesztve, nyílt licenc alatt állnak elő, és bármely állami szerv telepítheti őket a saját infrastruktúrájára — a KözKód kizárólag a telepítő csomagot biztosítja, az üzemeltetés minden esetben az intézmény saját szerverein történik.</p>
+
+          <p>Ez a modell a <strong>jelenlegi szállítóknak sem ellenfele</strong>, hanem eszköz a kezükben. A platformon felhalmozódó, újrafelhasználható komponenseket egy közintézménynek dolgozó fejlesztő vagy vállalkozás szabadon beépítheti a saját megoldásába; a komponensek nyílt licence (ajánlottan <strong>EUPL 1.2</strong>) cserébe annyit kér, hogy a belőlük készült továbbfejlesztés is nyílt maradjon, és a megoldás láthatóan jelölje a felhasznált KözKód-komponenst. Így a szállító gyorsabban és olcsóbban szállíthat, miközben a fejlesztései visszacsatolódnak a közösbe — a KözKód tehát nem kiszorítja a piaci szereplőket, hanem közös alapot kínál nekik, és arra ösztönzi őket, hogy saját érdekükből maguk is fejlesszék a közös komponenseket.</p>
+          <p class="text-sm text-slate-500">Erre van nemzetközi példa: a Linux kernel egyik legnagyobb vállalati hozzájárulója egy időszakban éppen a Microsoft volt — saját céljaiból, de így a közöshöz tette hozzá a legtöbbet. Ez a közös fejlesztés logikája: mindenki azt rakja hozzá, amire neki is szüksége van, és együtt több lesz az egész.</p>
 
           <p>Mindkét irányhoz ugyanaz az azonosítási alap tartozik. Minden hozzájáruló valódi névvel, valódi felelősséggel vesz részt — a belépés felhasználónévvel, jelszóval és kötelező kétlépéses azonosítással (TOTP 2FA) történik a <strong>platform.kozkod.hu</strong> oldalon. Minden commit visszavezethető az azt beküldő személyhez. Tervezett jövőbeli fejlesztés a <strong>KAÜ (Központi Azonosítási Ügynök)</strong> integráció az Ügyfélkapu+/DÁP hozzáféréssel — az infrastruktúra előkészítve.</p>
           <p>Az első belépéskor a hozzájáruló aláírja a <strong>Hozzájárulói Megállapodást (CLA)</strong>, amely tisztázza a szerzői jogi és felelősségi kérdéseket, majd kiválasztja a profilját: fejlesztő, tesztelő, dokumentáló, fordító, biztonsági szakember — vagy ezek kombinációja.</p>
