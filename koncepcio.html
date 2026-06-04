@@ -42,7 +42,7 @@
           <a href="index.html" class="hover:text-blue-800 transition-colors">Főoldal</a>
           <a href="koncepcio.html" class="text-blue-800 font-semibold">Koncepció</a>
           <a href="hogyan-mukodik.html" class="hover:text-blue-800 transition-colors">Hogyan működik?</a>
-          <a href="csatlakozz.html" class="hover:text-blue-800 transition-colors">Csatlakozz</a>
+          <a href="csatlakozz.html" class="hover:text-blue-800 transition-colors">Csatlakozás</a>
           <a href="kapcsolat.html" class="hover:text-blue-800 transition-colors">Kapcsolat</a>
           <a href="https://platform.kozkod.hu/auth/login" class="ml-2 border border-blue-300 text-blue-800 font-medium px-4 py-2 rounded-md hover:bg-blue-50 transition-colors">Belépés</a>
           <a href="https://platform.kozkod.hu/auth/register" class="bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-900 transition-colors">Regisztráció</a>
@@ -62,7 +62,7 @@
         <a href="index.html" class="py-2.5 hover:text-blue-800 transition-colors">Főoldal</a>
         <a href="koncepcio.html" class="py-2.5 text-blue-800 font-semibold">Koncepció</a>
         <a href="hogyan-mukodik.html" class="py-2.5 hover:text-blue-800 transition-colors">Hogyan működik?</a>
-        <a href="csatlakozz.html" class="py-2.5 hover:text-blue-800 transition-colors">Csatlakozz</a>
+        <a href="csatlakozz.html" class="py-2.5 hover:text-blue-800 transition-colors">Csatlakozás</a>
         <a href="kapcsolat.html" class="py-2.5 hover:text-blue-800 transition-colors">Kapcsolat</a>
         <a href="https://platform.kozkod.hu/auth/login" class="mt-2 border border-blue-300 text-blue-800 font-medium px-4 py-2.5 rounded-md text-center hover:bg-blue-50 transition-colors">Belépés</a>
         <a href="https://platform.kozkod.hu/auth/register" class="mt-1 bg-blue-800 text-white px-4 py-2.5 rounded-md text-center hover:bg-blue-900 transition-colors">Regisztráció</a>
@@ -103,7 +103,7 @@
               <li><a href="#hozzajarulas" class="toc-link block py-1 hover:text-blue-700">A hozzájárulás menete</a></li>
               <li><a href="#elismeres" class="toc-link block py-1 hover:text-blue-700">Az elismerési rendszer</a></li>
               <li><a href="#technikai-alap" class="toc-link block py-1 hover:text-blue-700">A technikai alap</a></li>
-              <li><a href="#kockazatok" class="toc-link block py-1 hover:text-blue-700">A kockázatok</a></li>
+              <li><a href="#licenc" class="toc-link block py-1 hover:text-blue-700">A licencről</a></li>
               <li><a href="#zarszó" class="toc-link block py-1 hover:text-blue-700">Zárszó</a></li>
             </ul>
           </nav>
@@ -264,15 +264,13 @@
 
         <hr class="border-slate-200 my-8">
 
-        <!-- Kockázatok -->
-        <section id="kockazatok">
-          <h2>A kockázatok</h2>
-          <p>A legkomolyabb kockázat a <strong>supply chain támadás</strong>: egy hozzájáruló szándékosan sebezhető kódot próbál bevinni. A védekezés rétegelt — kötelező 4-szem elv, automatikus SAST és függőségaudit, NKI random ellenőrzés, hozzájárulói előtörténet figyelése. De nem tévedhetetlen. A modell kizárólag azért működhet, mert a megnyitható rendszerek köre szigorúan korlátozott.</p>
-          <p>A <strong>karbantartói kapacitáshiány</strong> talán a legvalósabb kockázat. Ha az intézmény elegendő karbantartói kapacitás nélkül nyit meg projektet, a közösségi részvétel elhal. Ezért a megnyitás engedélyezésének feltétele a karbantartói kapacitás bemutatása — és jó esetben egy <strong>központi karbantartói pool</strong> kialakítása.</p>
-          <p>A <strong>GDPR-megfelelés</strong> kezelendő: a hozzájárulók azonosítása személyes adat. A megoldás adattakarékos — nyilvánosan csak pszeudonim jelenik meg, a valódi azonosító kizárólag a platformüzemeltetőnél, jogszabályi alapon kezelve. A szellemi tulajdon kérdéseit a kötelező CLA és a DCO (Developer Certificate of Origin) tisztázza.</p>
-          <p>A <strong>politikai instabilitás</strong> reális kockázat — egy modell, amely csak egy kormányzati ciklusig él, nem épít bizalmat. A válasz: törvényi szintű rögzítés, széleskörű parlamenti és szakmai konszenzus, csatlakozás az EU-s közigazgatási nyílt forrás kezdeményezésekhez EUPL-alapon.</p>
+        <!-- Licenc -->
+        <section id="licenc">
+          <h2>A licencről — miért az EUPL</h2>
+          <p>A megnyitott állami komponensek ajánlott licence az <strong>EUPL 1.2</strong> (European Union Public Licence) — az Európai Bizottság saját, kifejezetten a közigazgatási szoftverek megosztására és újrafelhasználására alkotott nyílt licence. Az EU mind a 23 hivatalos nyelvén — így magyarul is — jogilag egyenértékűen elérhető, és több tagállam (Németország, Spanyolország, Hollandia, Észtország) közigazgatása is használja.</p>
+          <p>Az EUPL a „közpénzből közkód" elv jogi eszköze. <strong>Copyleft</strong> jellegű: a kódot bárki felhasználhatja és továbbfejlesztheti, de a belőle készült származékos művet is nyíltan, EUPL alatt kell megosztania. Így a közpénzből finanszírozott fejlesztés nyílt és újrafelhasználható marad — nem zárható vissza egyetlen szállító saját, zárt termékébe. Az EUPL emellett tudatosan kompatibilis más elterjedt nyílt licencekkel (például a GPL-lel), így a meglévő nyílt komponensekkel együtt használható.</p>
+          <p>Ezzel szemben a platformon a közösség által <em>a semmiből</em> épített, általános célú komponensek — amelyeket bárki, akár egy szállító is beépíthet a saját, zárt megoldásába — <strong>megengedő (permisszív) licenc</strong> alatt állnak (például Apache 2.0). Ez teszi lehetővé, hogy magas vagy jelentős biztonsági osztályú, nem nyitható rendszerekbe is bekerüljenek; ilyenkor az egyetlen feltétel a felhasznált KözKód-komponens <strong>látható feltüntetése</strong>. A két megközelítés együtt biztosítja, hogy az állami beruházás nyílt és visszafejleszthetetlen maradjon, a közös eszközök pedig a lehető legszélesebb körben hasznosuljanak.</p>
         </section>
-
 
         <hr class="border-slate-200 my-8">
 
@@ -320,12 +318,12 @@
             <li><a href="index.html" class="hover:text-white transition-colors">Főoldal</a></li>
             <li><a href="koncepcio.html" class="hover:text-white transition-colors">Koncepció</a></li>
             <li><a href="hogyan-mukodik.html" class="hover:text-white transition-colors">Hogyan működik?</a></li>
-            <li><a href="csatlakozz.html" class="hover:text-white transition-colors">Csatlakozz</a></li>
+            <li><a href="csatlakozz.html" class="hover:text-white transition-colors">Csatlakozás</a></li>
             <li><a href="kapcsolat.html" class="hover:text-white transition-colors">Kapcsolat</a></li>
           </ul>
         </div>
         <div>
-          <h4 class="text-white font-semibold mb-3 text-sm uppercase tracking-wider" style="font-family: Lexend, sans-serif;">Szerző</h4>
+          <h4 class="text-white font-semibold mb-3 text-sm uppercase tracking-wider" style="font-family: Lexend, sans-serif;">Megalkotó</h4>
           <p class="text-sm mb-1">Gulyás György Tamás</p>
           <a href="https://ggyt.hu" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:text-blue-300 transition-colors text-sm">ggyt.hu</a>
           <p class="text-sm mt-3 text-slate-500">Licenc: EUPL 1.2</p>
