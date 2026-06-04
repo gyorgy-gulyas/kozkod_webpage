@@ -44,7 +44,7 @@
           <a href="hogyan-mukodik.html" class="hover:text-blue-800 transition-colors">Hogyan működik?</a>
           <a href="csatlakozz.html" class="hover:text-blue-800 transition-colors">Csatlakozz</a>
           <a href="kapcsolat.html" class="hover:text-blue-800 transition-colors">Kapcsolat</a>
-          <a href="https://platform.kozkod.hu/auth/login" class="ml-2 text-blue-800 font-medium px-3 py-2 hover:text-blue-900 transition-colors">Belépés</a>
+          <a href="https://platform.kozkod.hu/auth/login" class="ml-2 border border-blue-300 text-blue-800 font-medium px-4 py-2 rounded-md hover:bg-blue-50 transition-colors">Belépés</a>
           <a href="https://platform.kozkod.hu/auth/register" class="bg-blue-800 text-white px-4 py-2 rounded-md hover:bg-blue-900 transition-colors">Regisztráció</a>
         </div>
         <button id="menu-btn" class="md:hidden p-2 text-slate-600 hover:text-blue-800 transition-colors" aria-label="Menü megnyitása">
@@ -64,7 +64,7 @@
         <a href="hogyan-mukodik.html" class="py-2.5 hover:text-blue-800 transition-colors">Hogyan működik?</a>
         <a href="csatlakozz.html" class="py-2.5 hover:text-blue-800 transition-colors">Csatlakozz</a>
         <a href="kapcsolat.html" class="py-2.5 hover:text-blue-800 transition-colors">Kapcsolat</a>
-        <a href="https://platform.kozkod.hu/auth/login" class="mt-2 text-center text-blue-800 font-medium px-4 py-2.5 hover:text-blue-900 transition-colors">Belépés</a>
+        <a href="https://platform.kozkod.hu/auth/login" class="mt-2 border border-blue-300 text-blue-800 font-medium px-4 py-2.5 rounded-md text-center hover:bg-blue-50 transition-colors">Belépés</a>
         <a href="https://platform.kozkod.hu/auth/register" class="mt-1 bg-blue-800 text-white px-4 py-2.5 rounded-md text-center hover:bg-blue-900 transition-colors">Regisztráció</a>
       </div>
     </div>
@@ -152,9 +152,6 @@
 
           <p>A közösségi irány különösen ott hatékony, ahol ma kereskedelmi dobozos szoftvereket használnak az intézmények — olyan általános adminisztratív eszközöket, amelyek biztonsági besorolása alap szintű, és amelyeket a szakmai közösség meg tud építeni. Ezek az eszközök a platformon fejlesztve, nyílt licenc alatt állnak elő, és bármely állami szerv telepítheti őket a saját infrastruktúrájára — a KözKód kizárólag a telepítő csomagot biztosítja, az üzemeltetés minden esetben az intézmény saját szerverein történik.</p>
 
-          <p>Ez a modell a <strong>jelenlegi szállítóknak sem ellenfele</strong>, hanem eszköz a kezükben. A platformon felhalmozódó, újrafelhasználható komponenseket egy közintézménynek dolgozó fejlesztő vagy vállalkozás szabadon beépítheti a saját megoldásába; a komponensek nyílt licence (ajánlottan <strong>EUPL 1.2</strong>) cserébe annyit kér, hogy a belőlük készült továbbfejlesztés is nyílt maradjon, és a megoldás láthatóan jelölje a felhasznált KözKód-komponenst. Így a szállító gyorsabban és olcsóbban szállíthat, miközben a fejlesztései visszacsatolódnak a közösbe — a KözKód tehát nem kiszorítja a piaci szereplőket, hanem közös alapot kínál nekik, és arra ösztönzi őket, hogy saját érdekükből maguk is fejlesszék a közös komponenseket.</p>
-          <p class="text-sm text-slate-500">Erre van nemzetközi példa: a Linux kernel egyik legnagyobb vállalati hozzájárulója egy időszakban éppen a Microsoft volt — saját céljaiból, de így a közöshöz tette hozzá a legtöbbet. Ez a közös fejlesztés logikája: mindenki azt rakja hozzá, amire neki is szüksége van, és együtt több lesz az egész.</p>
-
           <p>Mindkét irányhoz ugyanaz az azonosítási alap tartozik. Minden hozzájáruló valódi névvel, valódi felelősséggel vesz részt — a belépés felhasználónévvel, jelszóval és kötelező kétlépéses azonosítással (TOTP 2FA) történik a <strong>platform.kozkod.hu</strong> oldalon. Minden commit visszavezethető az azt beküldő személyhez. Tervezett jövőbeli fejlesztés a <strong>KAÜ (Központi Azonosítási Ügynök)</strong> integráció az Ügyfélkapu+/DÁP hozzáféréssel — az infrastruktúra előkészítve.</p>
           <p>Az első belépéskor a hozzájáruló aláírja a <strong>Hozzájárulói Megállapodást (CLA)</strong>, amely tisztázza a szerzői jogi és felelősségi kérdéseket, majd kiválasztja a profilját: fejlesztő, tesztelő, dokumentáló, fordító, biztonsági szakember — vagy ezek kombinációja.</p>
         </section>
@@ -211,7 +208,9 @@
           <p>A <strong>forrás-megnyitó intézmények</strong> — minisztériumok, önkormányzatok, állami tulajdonú társaságok — döntik el, mit tesznek fel a platformra. A megnyitás az ő döntésük, de csak a minisztérium jóváhagyásával és az NKI kötelező, 15 napos határidejű véleménye alapján hozhatják meg.</p>
           <p>A <strong>karbantartók</strong> az adott intézmény által kijelölt személyek — lehetnek belső munkatársak, de szerződéses szállítók képviselői is. Ők fogadják be a pull requesteket. A <strong>4-szem elv kötelező</strong>: legalább két karbantartó jóváhagyása szükséges minden egyes változtatáshoz.</p>
           <p>A <strong>hozzájárulók</strong> az Ügyfélkapun belépett, azonosított fejlesztők, tesztelők, technikai írók, UX-tervezők, biztonsági kutatók — mindenki, akinek van szakmai kompetenciája és ideje egy-egy feladatot felvállalni.</p>
-        </section>
+
+          <p>A <strong>jelenlegi szállítók</strong> sem kimaradnak ebből — éppen ellenkezőleg. A platformon felhalmozódó, újrafelhasználható komponenseket egy szállító szabadon beépítheti a saját megoldásába akkor is, ha az zárt forráskódú: a közös komponensek <strong>megengedő (permisszív) licenc</strong> alatt állnak, így <strong>magas vagy jelentős</strong> biztonsági osztályú — épp ezért nem nyitható — rendszerekbe is beépíthetők. A szállítónak <strong>nem kell, és e rendszereknél nem is szabad megnyitnia a saját forráskódját</strong>; az egyetlen feltétel, hogy <strong>látható helyen feltüntesse, ha KözKód-komponenst használ</strong>. Így a szállító gyorsabban és olcsóbban dolgozhat, a KözKód pedig nem kiszorítja a piaci szereplőket, hanem közös alapot ad nekik — és arra ösztönzi őket, hogy saját érdekükből maguk is fejlesszék a közös komponenseket.</p>
+          <p class="text-sm text-slate-500">Erre van nemzetközi példa: a Linux kernel egyik legnagyobb vállalati hozzájárulója egy időszakban éppen a Microsoft volt — saját céljaiból, de így a közöshöz tette hozzá a legtöbbet. Ez a közös fejlesztés logikája: mindenki azt rakja hozzá, amire neki is szüksége van, és együtt több lesz az egész.</p>
 
         <hr class="border-slate-200 my-8">
 
